@@ -11,16 +11,44 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-6">
-        Gifts to Buy: 
-        <button></button>
-      </div>
-      <div class="col-6">
-        Gifts Bought: 
-      </div>
+      <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-header">
+
+              </div>
+              <div class="card-body">
+                <h5 class="card-tittle">X-mas List</h5>
+                <p class="card-text">These are the gifts I need to buy...</p>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="Form-label"> </label>
+                  <input type="text" class="form-control" id="grocery-item" placeholder="gift">
+                </div>
+                <a href="#" id="add-to-list" class="btn btn-primary">Add to list</a>
+              </div>
+              <div class="col-md-3"></div>
+            
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                <div class="card text-white bg-primary mb-3" style="max-width:18rem;">
+                <div class="card-header">Need to buy</div>
+                <div class="card-body">
+                  <ul id="need-to-buy">
+                    
+                  </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card text-white bg-danger mb-3" style="max-width:18rem;">
+          <div class="card-header">Bought</div>
+          <div class="card-body">
+            <ul id="bought">
+              
+            </ul>
     </div>
   </div>
-  
-
+</div>
 </body>
 </html>
