@@ -31,6 +31,17 @@ buttonToAddToList.addEventListener("click", function (e) {
     let listEl = document.createElement("li");
     listEl.textContent = itemsINeedToBuy[i];
 
+    //create a button
+    let boughtButton = document.createElement("button");
+    //giving the button text
+    boughtButton.textContent = "Bought";
+    //giving the button a class
+    boughtButton.setAttribute("class", "btn-danger");
+    //giving the button a data attribute
+    boughtButton.setAttribute("data-index", i); 
+    //appending button to listEl 
+    listEl.appendChild(boughtButton);
+
     // add onto the DOM by appending
     needToBuyEl.appendChild(listEl);
   }
