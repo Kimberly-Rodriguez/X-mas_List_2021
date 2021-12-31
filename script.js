@@ -6,6 +6,19 @@ let boughtEl = document.querySelector("#bought");
 let itemsINeedToBuy = [];
 let itemsIBought = [];
 
+function init() {
+  //take things out of local storage
+  let storedItems = JSON.parse(localStorage.getItem("need-to-buy"));
+  //console.log(storedItems);
+ //make sure there is something inside the array otherwise exit the funtion
+  if (!storedItems){
+    return;
+  }
+  // if there is something inside make the array equal itemsINeeToBuy
+  itemsINeedToBuy = storedItems;
+  // calling the renderIteams INeedToBuy funtion to run the aray and make sure it stays after page load
+  renderItemsINeedToBuy()
+};
 
 
 function renderItemsINeedToBuy() {
