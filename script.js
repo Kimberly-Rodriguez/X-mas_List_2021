@@ -68,9 +68,9 @@ buttonToAddToList.addEventListener("click", function (e) {
 });
 
 
-needToBuyEl.addEventListener("click", function(e){
+needToBuyEl.addEventListener("click", function(event){
   //use event target to find the button and identify the data-index
-  let element = e.target;
+  let element = event.target;
   // console.log(element);
 
   if(element.matches("button")){
@@ -78,12 +78,19 @@ needToBuyEl.addEventListener("click", function(e){
     // console.log(itemIndex);
     // console.log(itemsINeedToBuy[itemIndex]);
     //identigy the the item index the pushed it to the next event
-    itemsIBought.push(itemsINeedToBuy[itemIndex])
+    itemsIBought.push(itemsINeedToBuy[itemIndex]);
     console.log(itemsIBought);
+
+    localStorage.setItem("bought", JSON.stringify(itemsIBought))
 
     //used splice to delete the item from one array before moving to the next array
     itemsINeedToBuy.splice(itemIndex, 1);
     console.log(itemsINeedToBuy);
+    //save them on local storage
+    localStorage.setItem("need-to-buy", JSON.stringify(itemsINeedToBuy));
+    //remove the items bought fromt he screen
+    renderItemsINeedToBuy()
+
   }
 
 });
