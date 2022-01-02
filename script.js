@@ -17,7 +17,7 @@ function init() {
   // if there is something inside make the array equal itemsINeeToBuy
   itemsINeedToBuy = storedItems;
   // calling the renderIteams INeedToBuy funtion to run the aray and make sure it stays after page load
-  renderItemsINeedToBuy()
+  renderItemsINeedToBuy();
 };
 
 
@@ -47,7 +47,6 @@ function renderItemsINeedToBuy() {
      // add onto the DOM by appending
      needToBuyEl.appendChild(listEl);
    }
-
 }
 
 //creting and event listener for the addToList button
@@ -59,12 +58,33 @@ buttonToAddToList.addEventListener("click", function (e) {
 
   //pushing itemsINeedToBuy onto the array
   itemsINeedToBuy.push(item);
-  console.log(itemsINeedToBuy);
+  //console.log(itemsINeedToBuy);
 
   //saving items on localstorage
   localStorage.setItem("need-to-buy", JSON.stringify(itemsINeedToBuy));
 
   renderItemsINeedToBuy(); 
+
+});
+
+
+needToBuyEl.addEventListener("click", function(e){
+  //use event target to find the button and identify the data-index
+  let element = e.target;
+  // console.log(element);
+
+  if(element.matches("button")){
+    let itemIndex = element.getAttribute("data-index");
+    // console.log(itemIndex);
+    // console.log(itemsINeedToBuy[itemIndex]);
+    //identigy the the item index the pushed it to the next event
+    itemsIBought.push(itemsINeedToBuy[itemIndex])
+    console.log(itemsIBought);
+
+    //used splice to delete the item from one array before moving to the next array
+    itemsINeedToBuy.splice(itemIndex, 1);
+    console.log(itemsINeedToBuy);
+  }
 
 });
 
