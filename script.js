@@ -18,6 +18,16 @@ function init() {
   itemsINeedToBuy = storedItems;
   // calling the renderIteams INeedToBuy funtion to run the aray and make sure it stays after page load
   renderItemsINeedToBuy();
+
+  let boughtItems = JSON.parse(localStorage.getItem("bought"));
+  console.log(boughtItems)
+
+  if(!boughtItems){
+    return;
+  }
+  itemsIBought = boughtItems;
+
+  renderIteamsIBought();
 };
 
 function renderIteamsIBought() {
