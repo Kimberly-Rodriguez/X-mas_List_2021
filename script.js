@@ -20,6 +20,22 @@ function init() {
   renderItemsINeedToBuy();
 };
 
+function renderIteamsIBought() {
+  boughtEl.textContent = "";
+  for (let i = 0; i <  itemsIBought.length; i++) {
+    console.log(itemsIBought[i]);
+
+   //element dinamically created
+   let listEl = document.createElement("li");
+   listEl.textContent = itemsIBought[i];
+
+   // add onto the DOM by appending
+   boughtEl.appendChild(listEl);
+    
+    
+  }
+
+}
 
 function renderItemsINeedToBuy() {
    // to eliminate duplicates
@@ -27,7 +43,7 @@ function renderItemsINeedToBuy() {
 
    //looping through the array of itemsINeedToBuy
    for (let i = 0; i < itemsINeedToBuy.length; i++) {
-     //console.log(itemsINeedToBuy[i]);
+     console.log(itemsINeedToBuy[i]);
  
      //element dinamically created
      let listEl = document.createElement("li");
@@ -83,12 +99,14 @@ needToBuyEl.addEventListener("click", function(event){
 
     localStorage.setItem("bought", JSON.stringify(itemsIBought))
 
+    renderIteamsIBought();
+
     //used splice to delete the item from one array before moving to the next array
     itemsINeedToBuy.splice(itemIndex, 1);
     console.log(itemsINeedToBuy);
     //save them on local storage
     localStorage.setItem("need-to-buy", JSON.stringify(itemsINeedToBuy));
-    //remove the items bought fromt he screen
+    //remove the items bought
     renderItemsINeedToBuy()
 
   }
