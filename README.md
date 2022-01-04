@@ -10,7 +10,7 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Description
-A way to stay organize in the holidays by creating a list of items marked as bought or need to buy. 
+A way to stay organize during the holidays by creating a list of items marked as bought or need to buy. 
 
 ## Installation
 
